@@ -8,7 +8,7 @@ class Incidents extends Controller {
 
 		$incidents = $model->getList();
 
-		$this->view('incidents/list', ['layout' => 'default', 'data' => $incidents]);
+		$this->view('incidents/list', ['incidentList' => $incidents, 'title' => 'Incidenten Lijst']);
 	}
 
 

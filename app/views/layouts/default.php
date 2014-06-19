@@ -10,7 +10,7 @@
 			<?php echo $menu ?>
 		</nav>
 		<main>
-			<?php echo $main ?>
+			<?php echo $content ?>
 		</main>
 		<footer>
 			centrica copyright 2014
