@@ -1,4 +1,4 @@
-<?php require_once('../app/views/header.php'); ?>
+<?php require_once('../app/views/layouts/header.php'); ?>
 <table class="table">
    <caption>Incidenten Lijst</caption>
    <thead>
@@ -29,3 +29,4 @@
 		?>
    </tbody>
 </table>
+<?php require_once('../app/views/layouts/footer.php'); ?>

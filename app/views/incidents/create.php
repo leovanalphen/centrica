@@ -1,3 +1,8 @@
 <?php require_once('../app/views/layouts/header.php'); ?>
-<p>Welkom bij Centrica, de beheerapplicatie van scholengemeenschap de hondsrug</p>
+
+<form action="add" method="post">
+<input type="text" name="test">
+<input type="submit">
+</form>
+
 <?php require_once('../app/views/layouts/footer.php'); ?>

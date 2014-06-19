@@ -8,6 +8,8 @@ class Controller {
 	} 
 
 	public function view($view, $data = []) {
+	
+		$title = 'Centrica';
 		extract($data);
 		require_once '../app/views/' . $view . '.php';
 	}
