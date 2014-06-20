@@ -6,7 +6,7 @@ class problems extends Controller {
 
 		$model = $this->model('Problem');
 
-		$incidents = $model->getList();
+		$problems = $model->getList();
 
 		$this->notice = ['type' => 'error', 'msg' => 'test'];
 
