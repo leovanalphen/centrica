@@ -1,16 +1,11 @@
 <?php
 
-class Problem extends Model {
+class ConfiguratieItems extends Model {
 	
 	public function getList() {
-/* nog even af maken, een join oid? */
+	
 		$query = "
-			SELECT 	probleem.*
-			,		incidenten.incident_id
-			FROM	incidenten
-			,		probleem
-			WHERE	incidenten.ProbleemID = probleem.ProbleemID
-			GROUP BY probleem.ProbleemID
+			
 			";
 		
 		$dbh = parent::connectDB();
@@ -26,16 +21,12 @@ class Problem extends Model {
 		return null;
 	}
 	
-	public function create($data){
+	public function create_hw($data){
 		
 		$query = "
-			INSERT INTO	probleem (
-				Categorie,
-				Omschrijving
+			INSERT INTO	hardware (
 				)
 			VALUES (
-				:categorie,
-				:omschrijving
 				)
 			";
 		
@@ -43,8 +34,8 @@ class Problem extends Model {
 		
 		if($dbh) {
 			$sth = $dbh->prepare($query);
-			$sth->bindParam(':categorie', $data['categorie']);
-			$sth->bindParam(':omschrijving', $data['omschrijving']);
+			$sth->bindParam(':...', $data['...']);
+			$sth->bindParam(':...', $data['...']);
 			$result = $sth->execute();
 			$dhb = null;
 

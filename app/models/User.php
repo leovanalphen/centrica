@@ -61,7 +61,7 @@ class User extends Model {
 		return null;
 	}
 	
-public function getList() {
+	public function getList() {
 
 		$query = "
 			SELECT 
