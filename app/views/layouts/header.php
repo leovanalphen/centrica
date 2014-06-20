@@ -46,6 +46,14 @@
             			<li><a href="/public/users/create/">Aanmaken</a></li>
           			</ul>
         		</li>
+				<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Problemen<b class="caret"></b></a>
+          			<ul class="dropdown-menu">
+          				<li role="presentation" class="dropdown-header">Problemen</li>
+            			<li><a href="/public/problems/index/">Overzicht</a></li>
+            			<li><a href="/public/problems/create/">Aanmaken</a></li>
+          			</ul>
+        		</li>
         	</ul>
     </div>
   		</div>
