@@ -1,21 +1,58 @@
 <?php
 
 class User extends Model {
-	public $name;
+	protected $userId;
+	protected $userName;
+	protected $email;
+	protected $role;
 	
-	
-	public function get_user_by_id($user_id){
-	
+	public function addUser($data) {
 		$query = "
-			SELECT	*
-			FROM	users
-			WHERE	user_id = " + $user_id;
+			INSERT INTO users(
+				username,
+				email,
+				password,
+				role
+				)
+			VALUES (
+				:username,
+				:email,
+				:password,
+				:role
+				)";
 		
 		$dbh = parent::connectDB();
 		
 		if($dbh) {
-			$sth = $dbh->query($query);
-			$result = $sth->fetchAll(PDO::FETCH_ASSOC); //moet nog juiste functie voor gebruikt worden...
+			$sth = $dbh->prepare($query);
+			$sth->bindParam(':username', $data['username']);
+			$sth->bindParam(':email', $data['email']);
+			$sth->bindParam(':password', $data['password']);
+			$sth->bindParam(':role', $data['role']);
+			$result = $sth->execute();
+			$dhb = null;
+
+			if($result) {
+				return 'success';
+			} 
+		}
+
+		return 'error';
+	}
+
+	public function getUser($userId){
+	
+		$query = "
+			SELECT	*
+			FROM	users
+			WHERE	user_id = ?";
+		
+		$dbh = parent::connectDB();
+		
+		if($dbh) {
+			$sth = $dbh->prepare($query);
+			$sth->execute([$userId]);
+			$result = $sth->fetch();
 			$dhb = null;
 
 			return $result;
@@ -24,12 +61,15 @@ class User extends Model {
 		return null;
 	}
 	
-	public function get_user_list(){
-	
+public function getList() {
+
 		$query = "
-			SELECT	*
-			FROM	users
-		";
+			SELECT 
+				username,
+				email,
+				role
+			FROM users
+				";
 		
 		$dbh = parent::connectDB();
 		
@@ -43,52 +83,4 @@ class User extends Model {
 
 		return null;
 	}
-	
-	
-	public function edit_user(/* alles wat een user heeft */) {
-	
-		$query = "
-			UPDATE 	users
-			SET 	/*alles*/
-			WHERE	user_id = " + $user_id;
-		
-		$dbh = parent::connectDB();
-		
-		if($dbh) {
-			$dbh->query($query);
-			$dhb = null;
-		}
-	}
-	
-	public function add_user(/* alles wat een user heeft */) {
-		
-		$query = "
-			INSERT INTO	users (
-				/*alles */
-				)
-			VALUES		'/*de input*/'
-		";
-		
-		$dbh = parent::connectDB();
-		
-		if($dbh) {
-			$dbh->query($query);
-			$dhb = null;
-		}
-	}
-	
-	public function delete_user($user_id) {
-		
-		$query = "
-			DELETE FROM users
-			WHERE		user_id = " + $user_id;
-		
-		$dbh = parent::connectDB();
-		
-		if($dbh) {
-			$dbh->query($query);
-			$dhb = null;
-		}
-	}
-	
 }

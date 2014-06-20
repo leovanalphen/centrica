@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="col-md-5">
-		<form action="/public/incidents/add" method="post" role="form">
+		<form action="/public/users/add" method="post" role="form">
 			<div class="form-group">
 				<label for="username">Gebruikersnaam</label>
 				<input id="username" type="text" name="username" class="form-control" placeholder="Voer gebruikersnaam in">

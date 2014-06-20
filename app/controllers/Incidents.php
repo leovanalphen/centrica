@@ -8,9 +8,9 @@ class Incidents extends Controller {
 
 		$incidents = $model->getList();
 
-		$notice = ['type' => 'error', 'msg' => 'test'];
+		$this->notice = ['type' => 'error', 'msg' => 'test'];
 
-		$this->view('incidents/list', ['incidentList' => $incidents, 'title' => 'Incidenten Lijst', 'notice' => $notice]);
+		$this->view('incidents/list', ['incidentList' => $incidents, 'title' => 'Incidenten Lijst', 'notice' => $this->notice]);
 	}
 
 	public function create() {
