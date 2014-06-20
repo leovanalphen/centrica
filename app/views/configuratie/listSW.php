@@ -1,7 +1,7 @@
 <?php require_once('../app/views/layouts/header.php'); ?>
 
 <table class="table">
-   <caption>Gebruikers Lijst</caption>
+   <caption>Software Lijst</caption>
    <thead>
       <tr>
          <th>Naam</th>
