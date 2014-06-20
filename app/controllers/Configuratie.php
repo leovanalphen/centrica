@@ -25,6 +25,17 @@ class Configuratie extends Controller {
 		
 	}
 	
+	public function listHW() {
+		
+		$model = $this->model('ConfiguratieItems');
+
+		$configuratie = $model->getList_HW();
+
+		$this->notice = ['type' => 'error', 'msg' => 'test'];
+
+		$this->view('configuratie/listHW', ['ciList' => $configuratie, 'title' => 'Configuratie Lijst']);
+		
+	}
 	
 	public function create() {
 		

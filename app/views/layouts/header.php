@@ -65,7 +65,9 @@
           				<li role="presentation" class="dropdown-header">Configuratie</li>
             			<li><a href="/public/configuratie/index/">Start</a></li>
 						<li><a href="/public/configuratie/listSW/">Overzicht software</a></li>
-            			<li><a href="/public/configuratie/create/">Nieuw CI</a></li>
+						<li><a href="/public/configuratie/listHW/">Overzicht hardware</a></li>
+            			<li class="divider"></li>
+						<li><a href="/public/configuratie/create/">Nieuw CI</a></li>
           			</ul>
         		</li>
         	</ul>

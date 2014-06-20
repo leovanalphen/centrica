@@ -5,7 +5,13 @@ class ConfiguratieItems extends Model {
 	public function getList_hw() {
 	
 		$query = "
-			
+			SELECT		identificatie_code
+			,			aanschaf_jaar
+			,			besturingsysteem
+			,			leverancier_id
+			, 			producent_id
+			,			soort_id
+			FROM		hardware
 			";
 		
 		$dbh = parent::connectDB();
