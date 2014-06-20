@@ -58,7 +58,8 @@
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuratie<b class="caret"></b></a>
           			<ul class="dropdown-menu">
           				<li role="presentation" class="dropdown-header">Configuratie</li>
-            			<li><a href="/public/configuratie/index/">Overzicht</a></li>
+            			<li><a href="/public/configuratie/index/">Start</a></li>
+						<li><a href="/public/configuratie/listSW/">Overzicht software</a></li>
             			<li><a href="/public/configuratie/create/">Nieuw CI</a></li>
           			</ul>
         		</li>

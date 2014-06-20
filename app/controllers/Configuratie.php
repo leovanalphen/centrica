@@ -13,6 +13,19 @@ class Configuratie extends Controller {
 		$this->view('configuratie/index', [/*'ciList' => $configuratie,*/ 'title' => 'Configuratie Lijst', 'notice' => $this->notice]);
 	}
 
+	public function listSW() {
+		
+		$model = $this->model('ConfiguratieItems');
+
+		$configuratie = $model->getList_SW();
+
+		$this->notice = ['type' => 'error', 'msg' => 'test'];
+
+		$this->view('configuratie/listSW', ['ciList' => $configuratie, 'title' => 'Configuratie Lijst']);
+		
+	}
+	
+	
 	public function create() {
 		
 		$model = $this->model('ConfiguratieItems');

@@ -2,10 +2,33 @@
 
 class ConfiguratieItems extends Model {
 	
-	public function getList() {
+	public function getList_hw() {
 	
 		$query = "
 			
+			";
+		
+		$dbh = parent::connectDB();
+		
+		if($dbh) {
+			$sth = $dbh->query($query);
+			$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+			$dhb = null;
+
+			return $result;
+		}
+
+		return null;
+	}
+	
+	public function getList_sw() {
+	
+		$query = "
+			SELECT 	software_naam
+			,		leverancier_id
+			,		producent_id
+			,		soort_id
+			FROM	software
 			";
 		
 		$dbh = parent::connectDB();
