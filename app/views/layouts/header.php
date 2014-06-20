@@ -37,7 +37,12 @@
             			<li><a href="/public/incidents/create/">Aanmaken</a></li>
           			</ul>
         		</li>
-        		<li><a href="#">Kennisbank</a></li>
+        		<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kennisdatabank<b class="caret"></b></a>
+          			<ul class="dropdown-menu">
+            			<li><a href="/public/kennisdatabank/index/">Overzicht</a></li>
+            			<li class="divider"></li>
+            			<li><a href="/public/kennisdatabank/create/">Aanmaken</a></li>
+          			</ul></li>
         		<li class="dropdown">
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer<b class="caret"></b></a>
           			<ul class="dropdown-menu">
