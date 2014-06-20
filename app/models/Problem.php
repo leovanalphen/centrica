@@ -25,6 +25,37 @@ class Problem extends Model {
 
 		return null;
 	}
+	
+	public function create($data){
+		
+		$query = "
+			INSERT INTO	probleem (
+				Categorie,
+				Omschrijving
+				)
+			VALUES (
+				:categorie,
+				:omschrijving
+				)
+			";
+		
+		$dbh = parent::connectDB();
+		
+		if($dbh) {
+			$sth = $dbh->prepare($query);
+			$sth->bindParam(':categorie', $data['categorie']);
+			$sth->bindParam(':omschrijving', $data['omschrijving']);
+			$result = $sth->execute();
+			$dhb = null;
+
+			if($result) {
+				return 'success';
+			} 
+		}
+
+		return 'error';
+	}
+	
 }
 
 ?>
