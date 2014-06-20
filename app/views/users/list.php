@@ -4,7 +4,6 @@
    <caption>Gebruikers Lijst</caption>
    <thead>
       <tr>
-         <th>Detail</th>
          <th>Gebruikersnaam</th>
          <th>E-mail</th>
          <th>Rol</th>

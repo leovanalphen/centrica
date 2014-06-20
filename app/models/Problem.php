@@ -5,12 +5,9 @@ class Problem extends Model {
 	public function getList() {
 /* nog even af maken, een join oid? */
 		$query = "
-			SELECT 	probleem.*
-			,		incidenten.incident_id
-			FROM	incidenten
-			,		probleem
-			WHERE	incidenten.ProbleemID = probleem.ProbleemID
-			GROUP BY probleem.ProbleemID
+			SELECT 	*
+			FROM	probleem
+			ORDER BY probleem.ProbleemID
 			";
 		
 		$dbh = parent::connectDB();
