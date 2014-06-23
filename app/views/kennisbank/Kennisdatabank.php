@@ -1,17 +1,17 @@
 <?php require_once('../app/views/layouts/header.php'); ?>
-
 <table class="table">
-   <caption>Gebruikers Lijst</caption>
+   <caption>Kennisdatabank Lijst</caption>
    <thead>
       <tr>
-         <th>Gebruikersnaam</th>
-         <th>E-mail</th>
-         <th>Rol</th>
+         <th>Probleem ID</th>
+         <th>Categorie</th>
+         <th>Omschrijving</th>
+         <th>Workaround</th>
       </tr>
    </thead>
    <tbody>
    		<?php 
-   			foreach ($userList as $v1) {
+   			foreach ($kennisdatabanklist as $v1) {
    				echo '<tr>';
     			foreach ($v1 as $v2) {
         			echo "<td>$v2</td>";

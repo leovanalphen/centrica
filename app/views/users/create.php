@@ -16,6 +16,10 @@
 				<input id="password" type="password" name="password" class="form-control" placeholder="Voer wachtwoord in">
 			</div>
 			<div class="form-group">
+				<label for="password">Wachtwoord Controle</label>
+				<input id="passwordControl" type="password" name="passwordControl" class="form-control" placeholder="Voer wachtwoord nogmaals in">
+			</div>	
+			<div class="form-group">
 				<label for="role">Rol</label>
 				<select name="role" class="form-control">
  					<option value="0">Gebruiker</option>

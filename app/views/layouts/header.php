@@ -37,7 +37,12 @@
             			<li><a href="/public/incidents/create/">Aanmaken</a></li>
           			</ul>
         		</li>
-        		<li><a href="#">Kennisbank</a></li>
+        		<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kennisdatabank<b class="caret"></b></a>
+          			<ul class="dropdown-menu">
+            			<li><a href="/public/kennisdatabank/index/">Overzicht</a></li>
+            			<li class="divider"></li>
+            			<li><a href="/public/kennisdatabank/create/">Aanmaken</a></li>
+          			</ul></li>
         		<li class="dropdown">
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beheer<b class="caret"></b></a>
           			<ul class="dropdown-menu">
@@ -46,6 +51,29 @@
             			<li><a href="/public/users/create/">Aanmaken</a></li>
           			</ul>
         		</li>
+				<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Problemen<b class="caret"></b></a>
+          			<ul class="dropdown-menu">
+          				<li role="presentation" class="dropdown-header">Problemen</li>
+            			<li><a href="/public/problems/index/">Overzicht</a></li>
+            			<li><a href="/public/problems/create/">Aanmaken</a></li>
+          			</ul>
+        		</li>
+				<li class="dropdown">
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuratie<b class="caret"></b></a>
+          			<ul class="dropdown-menu">
+          				<li role="presentation" class="dropdown-header">Configuratie</li>
+            			<li><a href="/public/configuratie/index/">Start</a></li>
+						<li><a href="/public/configuratie/listSW/">Overzicht software</a></li>
+						<li><a href="/public/configuratie/listHW/">Overzicht hardware</a></li>
+            			<li class="divider"></li>
+						<li><a href="/public/configuratie/create/">Nieuw CI</a></li>
+          			</ul>
+        		</li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+              <li><p class="navbar-text">Ingelogd als <?php echo $_SESSION['userName'] ?></p>
+              <li><div><a class="btn btn-danger navbar-btn" href="/public/users/logout/">Uitloggen</a></div></li>
         	</ul>
     </div>
   		</div>

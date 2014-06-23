@@ -49,4 +49,82 @@ class Incident extends Model {
 
 		return null;
 	}
+	
+	public function create($data) {
+		
+		$query = "
+			INSERT INTO	incidenten (
+				user_id,
+				categorienr,
+				datum,
+				start_tijd,
+				Impact,
+				Urgentie,
+				Prioriteit,
+				hardware_id,
+				software_id,
+				omschrijving
+				)
+			VALUES (
+				:user_id,
+				:categorie,
+				:datum,
+				:start_tijd,
+				:impact,
+				:urgentie,
+				:prioriteit,
+				:hardware_id,
+				:software_id,
+				:omschrijving
+				)
+			";
+		
+		$dbh = parent::connectDB();
+		
+		if($dbh) {
+			$sth = $dbh->prepare($query);
+			$sth->bindParam(':user_id', $data['user_id']);
+			$sth->bindParam(':categorie', $data['categorie']);
+			$sth->bindParam(':datum', $data['datum']);
+			$sth->bindParam(':start_tijd', $data['start_tijd']);
+			$sth->bindParam(':impact', $data['impact']);
+			$sth->bindParam(':prioriteit', $data['prioriteit']);
+			$sth->bindParam(':hardware_id', $data['hardware_id']);
+			$sth->bindParam(':software_id', $data['software_id']);
+			$sth->bindParam(':omschrijving', $data['omschrijving']);
+			$result = $sth->execute();
+			$dhb = null;
+
+			if($result) {
+				return 'success';
+			} 
+		}
+
+		return 'error';
+	}
+	
+	public function addToProblem($data) {
+		
+		$query = "
+			UPDATE	incidenten
+			SET		ProbleemID = :probleemID
+			WHERE	incident_id = :incident_id
+			";
+	
+		$dbh = parent::connectDB();
+		
+		if($dbh) {
+			$sth = $dbh->prepare($query);
+			$sth->bindParam(':probleemID', $data['pobleemID']);
+			$sth->bindParam(':incident_id', $data['incident_id']);
+			$result = $sth->execute();
+			$dhb = null;
+
+			if($result) {
+				return 'success';
+			} 
+		}
+
+		return 'error';
+	}
 }

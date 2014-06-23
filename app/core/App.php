@@ -28,6 +28,11 @@ class App {
 
 		$this->params = $url ? array_values($url) : [];
 
+		if(!isset($_SESSION['loggedIn']) && $this->controller != 'users' && $this->method != in_array($this->method, ['login', 'authenticate', 'signup', 'add'])) {
+			header("Location: /public/users/login");
+			die();
+		} 
+
 		call_user_func_array([$this->controller, $this->method], $this->params);
 	}
 
